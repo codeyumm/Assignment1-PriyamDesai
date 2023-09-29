@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -10,6 +11,32 @@ namespace Assignment1_PriyamDesai.Controllers
 {
     public class HostingCostController : ApiController
     {
+
+        /// <summary>
+        /// this api return cost of hosting according to days
+        /// </summary>
+        /// <param name="id">numnber of days</param>
+        /// <returns>http://localhost:56522/api/hostingCost/14 -> <ArrayOfstring>
+        ///                                                       <string>2 fortnights at $5.50/FN = $11 CAD</string>
+        ///                                                      <string>HST 13% = $1.43 CAD</string>
+        ///                                                      <string>Total = $12.43 CAD</string>
+        ///                                                      </ArrayOfstring>
+        ///</returns>
+        /// <returns>http://localhost:56522/api/hostingCost/0 -> <ArrayOfstring>
+        ///                                                       <string>1 fortnights at $5.50/FN = $5.5 CAD</string>
+        ///                                                      <string>HST 13% = $0.72 CAD</string>
+        ///                                                      <string>Total = $6.22 CAD</string>
+        ///                                                      </ArrayOfstring>
+        ///</returns>
+        /// <returns>http://localhost:56522/api/hostingCost/36 -> <ArrayOfstring>
+        ///                                                       <string>3 fortnights at $5.50/FN = $16.5 CAD</string>
+        ///                                                      <string>HST 13% = $2.14 CAD</string>
+        ///                                                      <string>Total = $18.64 CAD</string>
+        ///                                                      </ArrayOfstring>
+        ///</returns>
+        ///
+
+
         public String[] Get(int id)
         {
             //VARIABLES

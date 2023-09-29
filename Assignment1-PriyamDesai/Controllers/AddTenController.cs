@@ -9,7 +9,17 @@ namespace Assignment1_PriyamDesai.Controllers
 {
     public class AddTenController : ApiController
     {
-        //api/AddtoTen/{2} -> 12
+        /// <summary>
+        /// this method return plus ten to the input number
+        /// </summary>
+        /// 
+        /// <param name="id">Any Integer</param>
+        /// 
+        /// <returns> http://localhost:56522/api/AddTen/6 -> <int>16</int> </returns>
+        /// <returns> http://localhost:56522/api/AddTen/50 -> <int>60</int> </returns>
+        /// <returns> http://localhost:56522/api/AddTen/36 -> <int>46</int> </returns>
+
+
         public int Get(int id)
         {
             int result = id + 10;
