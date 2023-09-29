@@ -24,7 +24,10 @@ namespace Assignment1_PriyamDesai.Controllers
             return result;
         }
 
-        // post
+        /// <summary>
+        /// this is a POST method to greet
+        /// </summary>
+        /// <returns>C:\Users\pvash>curl -d . http://localhost:56522/api/greeting -> "Hello World!"</returns>
        public String Post()
         {
             String outputString = "Hello World!";
